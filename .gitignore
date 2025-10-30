@@ -1,0 +1,43 @@
+# Node / general
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+*.log
+*.tgz
+dist/
+build/
+.cache/
+.env
+.env.*
+!.env.example
+
+# Vite / React
+bingo-react/node_modules/
+bingo-react/dist/
+bingo-react/.vite/
+bingo-react/.eslintcache
+bingo-react/.turbo/
+bingo-react/.parcel-cache
+
+# Backend
+bingo-react/bingo-backend/node_modules/
+bingo-react/bingo-backend/dist/
+bingo-react/bingo-backend/.env
+bingo-react/bingo-backend/.env.*
+!bingo-react/bingo-backend/env.example
+
+# Coverage / test
+coverage/
+.nyc_output/
+
+# OS / Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+Thumbs.db
+
+
