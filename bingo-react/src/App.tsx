@@ -5,7 +5,6 @@ import { GameControls } from './components/GameControls';
 import { ResultModal } from './components/ResultModal';
 import { Leaderboard } from './components/Leaderboard';
 import { ShareModal } from './components/ShareModal';
-import { UserStats } from './components/UserStats';
 import { ParticleEffect } from './components/ParticleEffect';
 import { CosmicBackground } from './components/CosmicBackground';
 import { LoginForm } from './components/LoginForm';
@@ -33,7 +32,7 @@ function GameApp() {
     error: gameStateError,
     toggleTile,
     resetSelections,
-    shuffleBoard,
+    // shuffleBoard,
     setShowResult
   } = useGameState();
 
@@ -154,7 +153,7 @@ function GameApp() {
                         </button>
                       )}
                       <GameControls
-                        onShuffle={shuffleBoard}
+                        // onShuffle={shuffleBoard}
                         onReset={resetSelections}
                         onGetResult={() => {
                           setShowResult(true);
@@ -177,7 +176,7 @@ function GameApp() {
                       <li>Click tiles that are true for you. Click again to unselect.</li>
                       <li>Complete any row, column, or diagonal to earn +5 bonus points.</li>
                       <li>Press Get Result to see your cosmic persona.</li>
-                      <li>Use Shuffle to get a fresh board. Progress is saved automatically.</li>
+                      {/* <li>Use Shuffle to get a fresh board. Progress is saved automatically.</li> */}
                     </ul>
                   </details>
                 </>

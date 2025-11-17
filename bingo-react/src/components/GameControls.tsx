@@ -1,20 +1,20 @@
 export function GameControls({ 
-  onShuffle, 
+  // onShuffle, 
   onReset, 
   onGetResult 
 }: {
-  onShuffle: () => void;
+  // onShuffle: () => void;
   onReset: () => void;
   onGetResult: () => void;
 }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <button
+      {/* <button
         onClick={onShuffle}
         className="px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-medium transition-all"
       >
         Shuffle
-      </button>
+      </button> */}
       <button
         onClick={onReset}
         className="px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-medium transition-all"

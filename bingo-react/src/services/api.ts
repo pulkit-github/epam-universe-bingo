@@ -84,7 +84,7 @@ export const gameStateAPI = {
   
   reset: () => api.post('/game-state/reset'),
   
-  shuffle: () => api.post('/game-state/shuffle'),
+  // shuffle: () => api.post('/game-state/shuffle'),
   
   clearSelections: () => api.post('/game-state/clear-selections'),
 };
