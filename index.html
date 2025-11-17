@@ -80,14 +80,14 @@
         { min: 41, max: 1000, title: 'The Legend of the EPAM Universe', desc: 'A cosmic legend—present across every galaxy. 🌌🚀✨' },
       ];
 
-      function shuffle(array) {
-        const result = array.slice();
-        for (let i = result.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [result[i], result[j]] = [result[j], result[i]];
-        }
-        return result;
-      }
+      // function shuffle(array) {
+      //   const result = array.slice();
+      //   for (let i = result.length - 1; i > 0; i--) {
+      //     const j = Math.floor(Math.random() * (i + 1));
+      //     [result[i], result[j]] = [result[j], result[i]];
+      //   }
+      //   return result;
+      // }
 
       function useLocalStorage(key, initialValue) {
         const [value, setValue] = useState(() => {
@@ -134,7 +134,7 @@
       }
 
       function App() {
-        const [board, setBoard] = useLocalStorage('bingo:board', () => shuffle(STATEMENTS).slice(0, 25));
+        const [board, setBoard] = useLocalStorage('bingo:board', () => STATEMENTS.slice(0, 25));
         const [selected, setSelected] = useLocalStorage('bingo:selected', Array(25).fill(false));
         const [showResult, setShowResult] = useLocalStorage('bingo:showResult', false);
 
@@ -167,10 +167,10 @@
           setShowResult(false);
         }
 
-        function shuffleBoard() {
-          setBoard(shuffle(STATEMENTS).slice(0, 25));
-          resetSelections();
-        }
+        // function shuffleBoard() {
+        //   setBoard(shuffle(STATEMENTS).slice(0, 25));
+        //   resetSelections();
+        // }
 
         return (
           React.createElement('div', { className: 'space-y-6' },
@@ -204,7 +204,7 @@
                 React.createElement('div', { className: 'text-sm text-white/80' }, `${score.cells} cells • ${score.lines} lines`)
               ),
               React.createElement('div', { className: 'flex items-center gap-2' },
-                React.createElement('button', { onClick: shuffleBoard, className: 'px-3 py-2 rounded bg-white/10 hover:bg-white/20 border border-white/20' }, 'Shuffle'),
+                // React.createElement('button', { onClick: shuffleBoard, className: 'px-3 py-2 rounded bg-white/10 hover:bg-white/20 border border-white/20' }, 'Shuffle'),
                 React.createElement('button', { onClick: resetSelections, className: 'px-3 py-2 rounded bg-white/10 hover:bg-white/20 border border-white/20' }, 'Reset'),
                 React.createElement('button', { onClick: () => setShowResult(true), className: 'px-4 py-2 rounded bg-cosmic-neon text-black font-semibold hover:brightness-110' }, 'Get Result')
               )

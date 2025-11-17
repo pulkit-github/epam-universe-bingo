@@ -70,6 +70,21 @@ Key Endpoints (Backend)
 - Leaderboard: `GET /api/leaderboard/global`, `GET /api/leaderboard/recent`, `GET /api/leaderboard/by-persona`, `GET /api/leaderboard/stats`
 - Game State: see `routes/gameState.js`
 
+Database Schema (Overview)
+--------------------------
+For complete details, see `bingo-react/bingo-backend/README.md`.
+
+- User
+  - `email` (unique), `password` (hashed), `name`, `createdAt`
+  - Indexes: unique index on `email`
+
+- Score
+  - `userId` (ref User), `score` (0–85), `cells`, `lines`, `persona { title, desc }`,
+    `board` (string[]), `selected` (boolean[]), `completedLines` (number[][]), `gameTime`, `createdAt`
+
+- GameState
+  - Per-user game persistence, e.g. `board` (string[]), `selected` (boolean[]), `updatedAt`
+
 Social Sharing
 --------------
 - `ShareModal.tsx` and `src/utils/shareUtils.ts` provide multi‑platform sharing and downloadable images.

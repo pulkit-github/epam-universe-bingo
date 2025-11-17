@@ -21,7 +21,6 @@ interface UseGameStateReturn {
   setShowResult: (showResult: boolean) => void;
   toggleTile: (index: number) => void;
   resetSelections: () => Promise<void>;
-  shuffleBoard: () => Promise<void>;
   resetGame: () => Promise<void>;
   saveGameState: () => Promise<void>;
 }
@@ -115,18 +114,18 @@ export function useGameState(): UseGameStateReturn {
     }
   }, []);
 
-  const shuffleBoard = useCallback(async () => {
-    try {
-      setLoading(true);
-      const response = await gameStateAPI.shuffle();
-      setGameState(response.data.gameState);
-    } catch (err) {
-      console.error('Failed to shuffle board:', err);
-      setError('Failed to shuffle board');
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  // const shuffleBoard = useCallback(async () => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await gameStateAPI.shuffle();
+  //     setGameState(response.data.gameState);
+  //   } catch (err) {
+  //     console.error('Failed to shuffle board:', err);
+  //     setError('Failed to shuffle board');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, []);
 
   const resetGame = useCallback(async () => {
     try {
@@ -153,7 +152,6 @@ export function useGameState(): UseGameStateReturn {
     setShowResult,
     toggleTile,
     resetSelections,
-    shuffleBoard,
     resetGame,
     saveGameState
   };
